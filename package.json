@@ -1,0 +1,19 @@
+{
+  "name": "analytics_slack_bat",
+  "version": "0.0.1",
+  "description": "Google analytics bot for Slack.",
+  "main": "main.gs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slowhand0309/AnalyticsSlackBot.git"
+  },
+  "author": "Slowhand0309",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slowhand0309/AnalyticsSlackBot/issues"
+  },
+  "homepage": "https://github.com/Slowhand0309/AnalyticsSlackBot#readme",
+  "devDependencies": {
+    "node-google-apps-script": "^1.1.5"
+  }
+}
