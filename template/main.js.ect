@@ -3,7 +3,7 @@
  * main function
  */
 function reportAnalytics() {
-  var profileId = "XXXXXXXXX"; // google analytics profile Id
+  var profileId = "<%= @profileId %>"; // google analytics profile Id
 
   reportSummary(profileId);
   reportViewsOfPageTitle(profileId);
@@ -44,8 +44,8 @@ function reportSummary(profileId) {
      var payload = {
      "text" : "message:\n" + text + "\n",
      "channel" : "#general",
-     "username" : "XXXXXX",
-     "icon_url" : "XXXXXX"
+     "username" : "<%= @userName %>",
+     "icon_url" : "<%= @iconUrl %>"
      }
      postSlack(payload);
    }
@@ -84,8 +84,8 @@ function reportViewsOfPageTitle(profileId) {
      var payload = {
      "text" : "message\n" + text + "\n",
      "channel" : "#general",
-     "username" : "XXXXXXX",
-     "icon_url" : "XXXXXXX"
+     "username" : "<%= @userName %>",
+     "icon_url" : "<%= @iconUrl %>"
      }
      postSlack(payload);
    }
@@ -103,7 +103,7 @@ function postSlack(payload) {
     "payload" : JSON.stringify(payload)
   }
 
-  var url = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+  var url = "<%= @slackUrl %>";
   var response = UrlFetchApp.fetch(url, options);
   var content = response.getContentText("UTF-8");
 }
