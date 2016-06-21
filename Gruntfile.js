@@ -11,6 +11,9 @@ module.exports = function(grunt) {
       init: {
          command: 'node_modules/node-google-apps-script/bin/gapps init ' + process.env.GAS_PROJECT_KEY
       },
+      upload: {
+         command: 'node_modules/node-google-apps-script/bin/gapps upload'
+      },
       echo: {
          command: 'echo ' + process.env.GAS_PROJECT_KEY
       }
@@ -38,4 +41,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['ect']);
   grunt.registerTask('init', ['exec:init']);
+  grunt.registerTask('upload', ['exec:upload']);
 };
