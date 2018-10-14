@@ -1,15 +1,10 @@
-import { postSlack, IPostPayload } from "./lib/slack";
+//import { postSlack, IPostPayload } from "./lib/slack";
 
-function showMessage(message: string): void {
-  Logger.log(message);
-}
+declare var global: any;
 
-showMessage('first ts gas');
-
-const params: IPostPayload = {
-  text: 'hoge',
-  channel: '#general',
-  icon_url: '',
-  username: 'hoge'
+global.report = () => {
+  const profileId = process.env.PROFILE_ID;
+  if (profileId) {
+    Logger.log(profileId);
+  }
 };
-postSlack(params);
